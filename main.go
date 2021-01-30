@@ -3,10 +3,14 @@ package main
 import "fmt"
 
 func main() {
-  // basic types are: bool, string, int and float 64
-  // variables can be assign as var card string = "Ace of spades" or
-  card := "Ace of spades"
-  // we only use := when declaration a new variable, when reassign just use equals
+  cards := []string{"ace of diamonds", newCard()}
+  cards = append(cards, "six of spades")
 
-  fmt.Println(card)
+  for index, card := range cards {
+    fmt.Println(index, card)
+  }
+}
+
+func newCard() string {
+  return "five of diamonds"
 }
